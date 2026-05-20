@@ -1,0 +1,231 @@
+@import "tailwindcss";
+
+
+
+/* ============================================================
+   TAILWIND V4 THEME CONFIGURATION (CSS-first)
+   ============================================================ */
+@theme {
+  --font-sans: var(--font-space-grotesk), system-ui, sans-serif;
+  --font-mono: var(--font-ibm-plex-mono), "Courier New", monospace;
+  
+  --color-bg-dark: #050505;
+  --color-bg-light: #f0ede8;
+  --color-text-dark: #f5f5f5;
+  --color-text-light: #050505;
+  --color-accent: #7ef9ff;
+  --color-secondary: #6f6f6f;
+  --color-surface: #0d0d0d;
+  --color-surface-card: #111111;
+  --color-border: #1e1e1e;
+}
+
+/* ============================================================
+   CSS CUSTOM PROPERTIES
+   ============================================================ */
+:root {
+  --bg-dark: #050505;
+  --bg-light: #f0ede8;
+  --text-dark: #f5f5f5;
+  --text-light: #050505;
+  --accent: #7ef9ff;
+  --accent-glow: rgba(126, 249, 255, 0.4);
+  --accent-dim: rgba(126, 249, 255, 0.12);
+  --secondary: #6f6f6f;
+  --surface: #0d0d0d;
+  --surface-card: #111111;
+  --border: #1e1e1e;
+  --border-light: rgba(255, 255, 255, 0.06);
+  --font-sans: var(--font-space-grotesk), system-ui, sans-serif;
+  --font-mono: var(--font-ibm-plex-mono), "Courier New", monospace;
+}
+
+/* ============================================================
+   BASE RESET & GLOBAL
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: auto; /* Lenis handles scroll */
+}
+
+body {
+  font-family: var(--font-space-grotesk), var(--font-sans), system-ui, sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-dark);
+  overflow-x: hidden;
+  cursor: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (pointer: coarse) {
+  body { cursor: auto; }
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg-dark);
+}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--bg-dark); }
+::-webkit-scrollbar-thumb { background: rgba(126,249,255,0.15); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+.font-mono { font-family: var(--font-mono) !important; }
+.font-sans { font-family: var(--font-sans) !important; }
+
+.text-hero {
+  font-size: clamp(4rem, 13vw, 14rem);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 0.88;
+  font-family: var(--font-sans);
+}
+
+.text-accent { color: var(--accent); }
+.text-secondary { color: var(--secondary); }
+
+.glow-text {
+  text-shadow: 0 0 20px var(--accent-glow), 0 0 60px rgba(126, 249, 255, 0.1);
+}
+
+/* ============================================================
+   TERMINAL CURSOR BLINK
+   ============================================================ */
+.cursor-blink::after {
+  content: "█";
+  color: var(--accent);
+  animation: blink 1s step-end infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ============================================================
+   CRT EFFECTS
+   ============================================================ */
+.crt-scanlines::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.07) 2px,
+    rgba(0, 0, 0, 0.07) 4px
+  );
+  pointer-events: none;
+  z-index: 10;
+}
+
+.crt-flicker {
+  animation: flicker 7s linear infinite;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  92% { opacity: 1; }
+  92.5% { opacity: 0.82; }
+  93% { opacity: 1; }
+  96% { opacity: 0.94; }
+  96.5% { opacity: 1; }
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-14px) rotate(0.5deg); }
+  66% { transform: translateY(-7px) rotate(-0.5deg); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes glitchH {
+  0%, 100% { clip-path: inset(0 0 100% 0); transform: translate(0); }
+  20% { clip-path: inset(20% 0 50% 0); transform: translate(-4px, 2px); }
+  40% { clip-path: inset(60% 0 5% 0); transform: translate(4px, -2px); }
+  60% { clip-path: inset(40% 0 30% 0); transform: translate(-2px, 1px); }
+  80% { clip-path: inset(80% 0 10% 0); transform: translate(3px, -1px); }
+}
+
+@keyframes scanDown {
+  from { top: -2px; }
+  to { top: 110%; }
+}
+
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+.animate-float { animation: float 9s ease-in-out infinite; }
+.animate-marquee { animation: marquee 35s linear infinite; }
+.animate-blink { animation: blink 1s step-end infinite; }
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+.section-full {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.container-main {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 5vw, 5rem);
+  width: 100%;
+}
+
+/* ============================================================
+   CARD STYLES
+   ============================================================ */
+.glass-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-light);
+  backdrop-filter: blur(10px);
+}
+
+.terminal-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  position: relative;
+}
+
+/* ============================================================
+   PRELOADER SPECIFIC
+   ============================================================ */
+.preloader-bg { background: var(--bg-light); }
+.preloader-text { color: var(--text-light); font-family: var(--font-mono); }
+
+/* ============================================================
+   GLITCH
+   ============================================================ */
+.glitch { position: relative; }
+.glitch::before, .glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+}
+.glitch::before { color: var(--accent); animation: glitchH 3s infinite; opacity: 0.6; }
+.glitch::after { color: #ff3c3c; animation: glitchH 3s 0.5s infinite; opacity: 0.4; }
