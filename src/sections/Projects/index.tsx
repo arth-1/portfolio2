@@ -22,7 +22,7 @@ function MobileProjects() {
             onClick={() => setActiveProject(i)}
             className="font-mono text-xs transition-all duration-200"
             style={{
-              color: i === activeProject ? PROJECT_ACCENT_COLORS[i] : "rgba(245,245,245,0.2)",
+              color: i === activeProject ? PROJECT_ACCENT_COLORS[i] : "rgba(245,245,245,0.70)",
               letterSpacing: "0.1em",
               paddingBottom: "4px",
               borderBottom: i === activeProject ? `1px solid ${PROJECT_ACCENT_COLORS[i]}` : "1px solid transparent",
@@ -49,15 +49,15 @@ function MobileProjects() {
           {/* Terminal chrome */}
           <div
             className="flex items-center gap-2 px-4 py-3"
-            style={{ borderBottom: "1px solid var(--border)", background: "rgba(255,255,255,0.015)" }}
+            style={{ borderBottom: "1px solid var(--border)", background: "rgba(255,255,255,0.04)" }}
           >
             {["#ff3c3c", "#f59e0b", "#22c55e"].map((c, i) => (
               <div key={i} className="w-2 h-2 rounded-full" style={{ background: c, opacity: 0.7 }} />
             ))}
-            <span className="font-mono text-xs ml-2 flex-1 text-center" style={{ color: "rgba(245,245,245,0.18)", fontSize: "0.6rem" }}>
+            <span className="font-mono text-xs ml-2 flex-1 text-center" style={{ color: "rgba(245,245,245,0.78)", fontSize: "1.04rem" }}>
               {project.title.toLowerCase().replace(/\s+/g, "-")}
             </span>
-            <span className="font-mono" style={{ color, opacity: 0.7, fontSize: "0.55rem", letterSpacing: "0.1em" }}>
+            <span className="font-mono" style={{ color, opacity: 0.7, fontSize: "1.04rem", letterSpacing: "0.1em" }}>
               {project.status}
             </span>
           </div>
@@ -77,7 +77,7 @@ function MobileProjects() {
             </h3>
 
             {/* Subtitle */}
-            <div className="font-sans text-sm mb-5" style={{ color: "rgba(245,245,245,0.38)", lineHeight: "1.5" }}>
+            <div className="font-sans text-sm mb-5" style={{ color: "rgba(245,245,245,0.72)", lineHeight: "1.5" }}>
               {project.subtitle}
             </div>
 
@@ -87,7 +87,7 @@ function MobileProjects() {
             {/* Description */}
             <p
               className="font-sans text-sm mb-6"
-              style={{ color: "rgba(245,245,245,0.5)", lineHeight: "1.75" }}
+              style={{ color: "rgba(245,245,245,0.82)", lineHeight: "1.75" }}
             >
               {project.description}
             </p>
@@ -100,8 +100,8 @@ function MobileProjects() {
                   className="font-mono"
                   style={{
                     border: `1px solid ${color}25`,
-                    color: "rgba(245,245,245,0.38)",
-                    fontSize: "0.6rem",
+                    color: "rgba(245,245,245,0.72)",
+                    fontSize: "1.04rem",
                     padding: "3px 10px",
                     letterSpacing: "0.08em",
                   }}
@@ -120,18 +120,18 @@ function MobileProjects() {
           onClick={() => setActiveProject(Math.max(0, activeProject - 1))}
           disabled={activeProject === 0}
           className="font-mono text-xs transition-colors duration-200"
-          style={{ color: activeProject === 0 ? "rgba(245,245,245,0.12)" : "rgba(245,245,245,0.4)", letterSpacing: "0.15em" }}
+          style={{ color: activeProject === 0 ? "rgba(245,245,245,0.70)" : "rgba(245,245,245,0.75)", letterSpacing: "0.15em" }}
         >
           ← PREV
         </button>
-        <span className="font-mono text-xs" style={{ color: "rgba(245,245,245,0.2)", letterSpacing: "0.15em" }}>
+        <span className="font-mono text-xs" style={{ color: "rgba(245,245,245,0.70)", letterSpacing: "0.15em" }}>
           {String(activeProject + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}
         </span>
         <button
           onClick={() => setActiveProject(Math.min(projects.length - 1, activeProject + 1))}
           disabled={activeProject === projects.length - 1}
           className="font-mono text-xs transition-colors duration-200"
-          style={{ color: activeProject === projects.length - 1 ? "rgba(245,245,245,0.12)" : "rgba(245,245,245,0.4)", letterSpacing: "0.15em" }}
+          style={{ color: activeProject === projects.length - 1 ? "rgba(245,245,245,0.70)" : "rgba(245,245,245,0.75)", letterSpacing: "0.15em" }}
         >
           NEXT →
         </button>
@@ -150,7 +150,7 @@ function DesktopProjects() {
     <div className="grid grid-cols-5 gap-6" style={{ minHeight: "70vh" }}>
       {/* Sidebar */}
       <div className="col-span-2 flex flex-col gap-1.5">
-        <div className="font-mono text-xs mb-5" style={{ color: "rgba(245,245,245,0.18)", letterSpacing: "0.22em" }}>
+        <div className="font-mono text-xs mb-5" style={{ color: "rgba(245,245,245,0.78)", letterSpacing: "0.22em" }}>
           SELECT PROJECT /
         </div>
         {projects.map((p, i) => (
@@ -169,10 +169,10 @@ function DesktopProjects() {
             <div className="font-mono text-xs mb-1" style={{ color: i === activeProject ? PROJECT_ACCENT_COLORS[i] : "var(--secondary)" }}>
               {p.id}
             </div>
-            <div className="font-sans font-semibold text-sm leading-tight" style={{ color: i === activeProject ? "var(--text-dark)" : "rgba(245,245,245,0.45)" }}>
+            <div className="font-sans font-semibold text-sm leading-tight" style={{ color: i === activeProject ? "var(--text-dark)" : "rgba(245,245,245,0.78)" }}>
               {p.title}
             </div>
-            <div className="font-mono mt-1" style={{ color: "rgba(245,245,245,0.18)", fontSize: "0.58rem", letterSpacing: "0.18em" }}>
+            <div className="font-mono mt-1" style={{ color: "rgba(245,245,245,0.78)", fontSize: "0.96rem", letterSpacing: "0.18em" }}>
               {p.category}
             </div>
             {i === activeProject && (
@@ -202,12 +202,12 @@ function DesktopProjects() {
               {/* Chrome bar */}
               <div
                 className="flex items-center gap-2 px-4 py-3"
-                style={{ borderBottom: "1px solid var(--border)", background: "rgba(255,255,255,0.015)" }}
+                style={{ borderBottom: "1px solid var(--border)", background: "rgba(255,255,255,0.04)" }}
               >
                 {["#ff3c3c", "#f59e0b", "#22c55e"].map((c, i) => (
                   <div key={i} className="w-2.5 h-2.5 rounded-full" style={{ background: c, opacity: 0.7 }} />
                 ))}
-                <div className="flex-1 text-center font-mono text-xs" style={{ color: "rgba(245,245,245,0.18)" }}>
+                <div className="flex-1 text-center font-mono text-xs" style={{ color: "rgba(245,245,245,0.78)" }}>
                   {project.title.toLowerCase().replace(/\s+/g, "-")}.project
                 </div>
                 <div className="font-mono text-xs" style={{ color, opacity: 0.75, letterSpacing: "0.1em" }}>
@@ -231,11 +231,11 @@ function DesktopProjects() {
                 >
                   {project.title}
                 </h2>
-                <div className="font-sans text-base mb-6" style={{ color: "rgba(245,245,245,0.38)", lineHeight: "1.55" }}>
+                <div className="font-sans text-base mb-6" style={{ color: "rgba(245,245,245,0.72)", lineHeight: "1.55" }}>
                   {project.subtitle}
                 </div>
                 <div className="h-px mb-6" style={{ background: `linear-gradient(90deg, ${color}40, transparent)` }} />
-                <p className="font-sans mb-8" style={{ color: "rgba(245,245,245,0.5)", lineHeight: "1.8", fontSize: "clamp(0.88rem, 1.5vw, 1rem)" }}>
+                <p className="font-sans mb-8" style={{ color: "rgba(245,245,245,0.82)", lineHeight: "1.8", fontSize: "clamp(0.88rem, 1.5vw, 1rem)" }}>
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-8">
@@ -243,7 +243,7 @@ function DesktopProjects() {
                     <span
                       key={i}
                       className="font-mono"
-                      style={{ border: `1px solid ${color}28`, color: "rgba(245,245,245,0.38)", fontSize: "0.63rem", padding: "4px 12px", letterSpacing: "0.08em" }}
+                      style={{ border: `1px solid ${color}28`, color: "rgba(245,245,245,0.72)", fontSize: "1.04rem", padding: "4px 12px", letterSpacing: "0.08em" }}
                     >
                       {tag}
                     </span>
@@ -252,13 +252,13 @@ function DesktopProjects() {
                 {/* Terminal log */}
                 <div
                   className="font-mono text-xs p-4"
-                  style={{ background: "rgba(0,0,0,0.3)", border: "1px solid var(--border)", color: "rgba(245,245,245,0.28)", lineHeight: "1.9" }}
+                  style={{ background: "rgba(0,0,0,0.3)", border: "1px solid var(--border)", color: "rgba(245,245,245,0.60)", lineHeight: "1.9" }}
                 >
                   <span style={{ color, opacity: 0.7 }}>$ </span>git log --oneline {project.title.toLowerCase().replace(/\s+/g, "-")}
                   <br />
-                  <span style={{ color: "rgba(245,245,245,0.18)" }}>&gt; {project.tags.slice(0, 3).join(" · ")}</span>
+                  <span style={{ color: "rgba(245,245,245,0.78)" }}>&gt; {project.tags.slice(0, 3).join(" · ")}</span>
                   <br />
-                  <span style={{ color: "rgba(245,245,245,0.12)" }}>
+                  <span style={{ color: "rgba(245,245,245,0.70)" }}>
                     &gt; status: {project.status.toLowerCase()}
                     <span style={{ animation: "blink 1s step-end infinite", color }}>█</span>
                   </span>
@@ -276,7 +276,7 @@ function DesktopProjects() {
             <div className="flex items-center justify-between mt-4">
               <button
                 className="font-mono text-xs transition-colors duration-200"
-                style={{ color: "rgba(245,245,245,0.28)", letterSpacing: "0.15em" }}
+                style={{ color: "rgba(245,245,245,0.60)", letterSpacing: "0.15em" }}
                 onClick={() => setActiveProject(Math.max(0, activeProject - 1))}
                 disabled={activeProject === 0}
               >
@@ -298,7 +298,7 @@ function DesktopProjects() {
               </div>
               <button
                 className="font-mono text-xs transition-colors duration-200"
-                style={{ color: "rgba(245,245,245,0.28)", letterSpacing: "0.15em" }}
+                style={{ color: "rgba(245,245,245,0.60)", letterSpacing: "0.15em" }}
                 onClick={() => setActiveProject(Math.min(projects.length - 1, activeProject + 1))}
                 disabled={activeProject === projects.length - 1}
               >
@@ -323,7 +323,7 @@ export default function Projects() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: "linear-gradient(rgba(126,249,255,0.018) 1px, transparent 1px), linear-gradient(90deg, rgba(126,249,255,0.018) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(126,249,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(126,249,255,0.035) 1px, transparent 1px)",
           backgroundSize: "80px 80px",
         }}
       />
@@ -333,7 +333,7 @@ export default function Projects() {
         <div className="flex items-center gap-4 mb-14">
           <span className="font-mono text-xs" style={{ color: "var(--accent)", letterSpacing: "0.3em" }}>/003</span>
           <div className="h-px flex-1" style={{ background: "var(--border)" }} />
-          <span className="font-mono text-xs" style={{ color: "rgba(245,245,245,0.2)", letterSpacing: "0.3em" }}>PROJECTS</span>
+          <span className="font-mono text-xs" style={{ color: "rgba(245,245,245,0.70)", letterSpacing: "0.3em" }}>PROJECTS</span>
         </div>
 
         {/* Mobile layout — shown only on small screens */}

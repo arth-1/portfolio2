@@ -21,10 +21,10 @@ function SkillItem({ text, delay, color }: { text: string; delay: number; color:
       ref={ref}
       className="font-mono text-xs px-4 py-2 transition-all duration-300 cursor-default"
       style={{
-        border: "1px solid rgba(255,255,255,0.06)",
-        color: "rgba(245,245,245,0.4)",
+        border: "1px solid rgba(255,255,255,0.12)",
+        color: "rgba(245,245,245,0.75)",
         letterSpacing: "0.1em",
-        fontSize: "0.75rem",
+        fontSize: "1.04rem",
       }}
       initial={{ opacity: 0, y: 10 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -119,7 +119,7 @@ function SkillMarquee() {
         style={{ animation: "marquee 35s linear infinite" }}
       >
         {[...allSkills, ...allSkills].map((skill, i) => (
-          <span key={i} className="font-mono text-xs mx-6" style={{ color: "rgba(245,245,245,0.12)", letterSpacing: "0.2em" }}>
+          <span key={i} className="font-mono text-xs mx-6" style={{ color: "rgba(245,245,245,0.35)", letterSpacing: "0.2em" }}>
             {skill}
             <span className="mx-6" style={{ color: "var(--accent)", opacity: 0.3 }}>◆</span>
           </span>
@@ -146,7 +146,7 @@ export default function Skills() {
             /004
           </span>
           <div className="h-px flex-1" style={{ background: "var(--border)" }} />
-          <span className="font-mono text-xs tracking-widest" style={{ color: "rgba(245,245,245,0.2)", letterSpacing: "0.3em" }}>
+          <span className="font-mono text-xs tracking-widest" style={{ color: "rgba(245,245,245,0.70)", letterSpacing: "0.3em" }}>
             DOMAINS & SKILLS
           </span>
         </div>
@@ -179,7 +179,7 @@ export default function Skills() {
             <br />
             <span
               style={{
-                WebkitTextStroke: "1px rgba(245,245,245,0.2)",
+                WebkitTextStroke: "1.5px rgba(245,245,245,0.35)",
                 color: "transparent",
               }}
             >
@@ -207,7 +207,7 @@ export default function Skills() {
         {/* Diagnostic complete */}
         <motion.div
           className="mt-8 font-mono text-xs"
-          style={{ color: "rgba(245,245,245,0.2)", letterSpacing: "0.2em" }}
+          style={{ color: "rgba(245,245,245,0.70)", letterSpacing: "0.2em" }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}

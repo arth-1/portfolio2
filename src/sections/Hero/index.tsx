@@ -106,7 +106,7 @@ export default function Hero() {
               animation: "blink 2s ease-in-out infinite",
             }}
           />
-          <span className="font-mono text-xs tracking-widest" style={{ color: "rgba(245,245,245,0.35)", letterSpacing: "0.3em" }}>
+          <span className="font-mono text-xs tracking-widest" style={{ color: "rgba(245,245,245,0.70)", letterSpacing: "0.3em" }}>
             ARTH.OS v2.0.25 / ONLINE
           </span>
         </motion.div>
@@ -130,7 +130,7 @@ export default function Hero() {
             <br />
             <span
               style={{
-                WebkitTextStroke: "1px rgba(245,245,245,0.3)",
+                WebkitTextStroke: "1.5px rgba(245,245,245,0.70)",
                 color: "transparent",
               }}
             >
@@ -162,13 +162,13 @@ export default function Hero() {
         >
           <p
             className="font-mono text-xs tracking-widest text-center"
-            style={{ color: "rgba(245,245,245,0.35)", letterSpacing: "0.3em", lineHeight: 1.6 }}
+            style={{ color: "rgba(245,245,245,0.70)", letterSpacing: "0.3em", lineHeight: 1.6 }}
           >
             AI ENGINEER · FULL-STACK DEVELOPER · CREATIVE TECHNOLOGIST
           </p>
           <p
             className="font-mono text-xs"
-            style={{ color: "rgba(245,245,245,0.2)", letterSpacing: "0.15em" }}
+            style={{ color: "rgba(245,245,245,0.70)", letterSpacing: "0.15em", fontSize: "0.8rem" }}
           >
             NMIMS Mumbai · MBA Tech · Computer Engineering
           </p>
@@ -195,7 +195,7 @@ export default function Hero() {
           <a
             href={`mailto:${siteConfig.email}`}
             className="font-mono text-xs tracking-widest transition-all duration-300 px-8 py-4"
-            style={{ color: "rgba(245,245,245,0.4)", letterSpacing: "0.2em" }}
+            style={{ color: "rgba(245,245,245,0.75)", letterSpacing: "0.2em" }}
           >
             GET IN TOUCH →
           </a>
@@ -208,7 +208,7 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 2.2, duration: 0.8 }}
         >
-          <span className="font-mono text-2xs tracking-widest" style={{ color: "rgba(245,245,245,0.2)", fontSize: "0.55rem" }}>
+          <span className="font-mono tracking-widest" style={{ color: "rgba(245,245,245,0.75)", fontSize: "0.98rem", letterSpacing: "0.25em" }}>
             SCROLL
           </span>
           <motion.div
@@ -231,8 +231,8 @@ export default function Hero() {
         >
           <div className="font-mono text-sm flex flex-col gap-2 p-8 border border-accent border-opacity-20 max-w-sm w-full mx-4">
             <div className="flex items-center gap-2 mb-4" style={{ color: "var(--accent)" }}>
-              <span style={{ fontSize: "0.6rem", letterSpacing: "0.3em" }}>ARTH.OS TERMINAL</span>
-              <div className="flex-1 h-px" style={{ background: "rgba(126,249,255,0.2)" }} />
+              <span style={{ fontSize: "1.04rem", letterSpacing: "0.3em" }}>ARTH.OS TERMINAL</span>
+              <div className="flex-1 h-px" style={{ background: "rgba(126,249,255,0.45)" }} />
             </div>
             {encryptLines.map((line, i) => (
               <motion.div

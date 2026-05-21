@@ -34,11 +34,11 @@ export default function Collaboration() {
           key={i}
           className="absolute font-mono text-xs pointer-events-none select-none"
           style={{
-            color: "rgba(126,249,255,0.06)",
+            color: "rgba(126,249,255,0.15)",
             letterSpacing: "0.2em",
             top: `${15 + i * 17}%`,
             left: i % 2 === 0 ? `${5 + i * 3}%` : `${60 + i * 4}%`,
-            fontSize: "0.6rem",
+            fontSize: "1.04rem",
           }}
           animate={{
             y: [0, -15, 0],
@@ -76,7 +76,7 @@ export default function Collaboration() {
           <span className="font-mono text-xs tracking-widest" style={{ color: "var(--accent)", letterSpacing: "0.3em" }}>
             /005
           </span>
-          <span className="font-mono text-xs tracking-widest" style={{ color: "rgba(245,245,245,0.2)", letterSpacing: "0.3em" }}>
+          <span className="font-mono text-xs tracking-widest" style={{ color: "rgba(245,245,245,0.70)", letterSpacing: "0.3em" }}>
             COLLABORATE
           </span>
           <div className="h-px flex-1" style={{ background: "var(--border)" }} />
@@ -86,7 +86,7 @@ export default function Collaboration() {
         <div ref={headerRef} className="flex flex-col items-center gap-6 mb-16">
           <motion.div
             className="font-mono text-xs tracking-widest"
-            style={{ color: "rgba(245,245,245,0.25)", letterSpacing: "0.35em" }}
+            style={{ color: "rgba(245,245,245,0.58)", letterSpacing: "0.35em" }}
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 0.6 }}
@@ -112,7 +112,7 @@ export default function Collaboration() {
             <br />
             <span
               style={{
-                WebkitTextStroke: "1px rgba(245,245,245,0.25)",
+                WebkitTextStroke: "1px rgba(245,245,245,0.58)",
                 color: "transparent",
               }}
             >
@@ -122,7 +122,7 @@ export default function Collaboration() {
 
           <motion.p
             className="font-sans text-base max-w-md leading-relaxed mb-6"
-            style={{ color: "rgba(245,245,245,0.35)", lineHeight: "1.85", fontSize: "1.05rem" }}
+            style={{ color: "rgba(245,245,245,0.70)", lineHeight: "1.85", fontSize: "1.05rem" }}
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.6 }}
@@ -162,7 +162,7 @@ export default function Collaboration() {
             target="_blank"
             rel="noopener noreferrer"
             className="font-mono text-xs tracking-widest transition-colors duration-200"
-            style={{ color: "rgba(245,245,245,0.35)", letterSpacing: "0.25em" }}
+            style={{ color: "rgba(245,245,245,0.70)", letterSpacing: "0.25em" }}
           >
             github.com/arth-1 →
           </a>
@@ -171,7 +171,7 @@ export default function Collaboration() {
         {/* Email display */}
         <motion.div
           className="mt-12 font-mono text-xs tracking-widest"
-          style={{ color: "rgba(245,245,245,0.15)", letterSpacing: "0.3em" }}
+          style={{ color: "rgba(245,245,245,0.75)", letterSpacing: "0.3em" }}
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 1 }}
@@ -182,7 +182,7 @@ export default function Collaboration() {
         {/* Transmission status */}
         <motion.div
           className="mt-8 flex items-center gap-3 font-mono text-xs"
-          style={{ color: "rgba(245,245,245,0.2)", letterSpacing: "0.2em" }}
+          style={{ color: "rgba(245,245,245,0.70)", letterSpacing: "0.2em" }}
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 1.2 }}

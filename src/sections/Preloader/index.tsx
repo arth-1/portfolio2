@@ -316,7 +316,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
                 >
                   <div className="flex items-center gap-3 w-full">
                     <div style={{ flex: 1, height: "1px", background: "rgba(5,5,5,0.15)" }} />
-                    <span className="font-mono" style={{ color: "#05050540", fontSize: "0.5rem" }}>■</span>
+                    <span className="font-mono" style={{ color: "#05050540", fontSize: "1.02rem" }}>■</span>
                     <div style={{ flex: 1, height: "1px", background: "rgba(5,5,5,0.15)" }} />
                   </div>
 
@@ -325,7 +325,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
                     style={{
                       color: enterHovered ? "#050505" : "#05050570",
                       letterSpacing: "0.22em",
-                      fontSize: "0.72rem",
+                      fontSize: "0.96rem",
                     }}
                     onMouseEnter={() => handleEnterHover(true)}
                     onMouseLeave={() => handleEnterHover(false)}
@@ -349,7 +349,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
             <div
               key={i}
               className={`absolute ${pos} font-mono opacity-25`}
-              style={{ color: "#050505", fontSize: "0.48rem", letterSpacing: "0.2em" }}
+              style={{ color: "#050505", fontSize: "1.02rem", letterSpacing: "0.2em" }}
             >
               {i === 0 && "ARTH.OS"}
               {i === 1 && "v2.0.25"}

@@ -159,4 +159,10 @@ export const philosophyCards = [
     body: "The most interesting problems don't have solutions yet. I build at the frontier — where code meets imagination.",
     code: "reality = code + creativity",
   },
+  {
+    id: "05",
+    title: "TERMINAL",
+    body: "",
+    code: "",
+  },
 ];

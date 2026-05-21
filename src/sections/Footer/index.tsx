@@ -18,7 +18,7 @@ export default function Footer() {
       className="relative overflow-hidden"
       style={{
         background: "#010101",
-        borderTop: "1px solid rgba(255,255,255,0.04)",
+        borderTop: "1px solid rgba(255,255,255,0.10)",
         padding: "5rem clamp(1.5rem, 5vw, 5rem) 3rem",
       }}
     >
@@ -41,13 +41,13 @@ export default function Footer() {
             <motion.div
               key={i}
               className="font-mono text-xs flex items-center gap-2"
-              style={{ color: "rgba(245,245,245,0.15)", letterSpacing: "0.15em" }}
+              style={{ color: "rgba(245,245,245,0.75)", letterSpacing: "0.15em" }}
               initial={{ opacity: 0, x: -10 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15, duration: 0.4 }}
             >
-              <span style={{ color: "rgba(126,249,255,0.25)" }}>▶</span>
+              <span style={{ color: "rgba(126,249,255,0.50)" }}>▶</span>
               {line}
               {i === SHUTDOWN_LINES.length - 1 && (
                 <span style={{ color: "rgba(126,249,255,0.5)", animation: "blink 1s step-end infinite" }}>█</span>
@@ -57,7 +57,7 @@ export default function Footer() {
         </motion.div>
 
         {/* Main footer row */}
-        <div className="flex flex-col md:flex-row items-center md:items-center justify-between gap-12 pt-10 text-center md:text-left" style={{ borderTop: "1px solid rgba(255,255,255,0.04)" }}>
+        <div className="flex flex-col md:flex-row items-center md:items-center justify-between gap-12 pt-10 text-center md:text-left" style={{ borderTop: "1px solid rgba(255,255,255,0.10)" }}>
           {/* Left — name + tagline */}
           <div>
             <div
@@ -66,7 +66,7 @@ export default function Footer() {
             >
               ARTH<span style={{ color: "var(--accent)" }}>.</span>
             </div>
-            <div className="font-mono text-xs mt-2" style={{ color: "rgba(245,245,245,0.2)", letterSpacing: "0.2em" }}>
+            <div className="font-mono text-xs mt-2" style={{ color: "rgba(245,245,245,0.70)", letterSpacing: "0.2em" }}>
               AI ENGINEER · FULL-STACK DEVELOPER
             </div>
           </div>
@@ -84,9 +84,9 @@ export default function Footer() {
                 target={link.href.startsWith("http") ? "_blank" : undefined}
                 rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                 className="font-mono text-xs transition-colors duration-200"
-                style={{ color: "rgba(245,245,245,0.25)", letterSpacing: "0.2em" }}
+                style={{ color: "rgba(245,245,245,0.58)", letterSpacing: "0.2em" }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent)")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(245,245,245,0.25)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(245,245,245,0.58)")}
               >
                 {link.label}
               </a>
@@ -94,9 +94,9 @@ export default function Footer() {
           </div>
 
           {/* Right — copyright */}
-          <div className="font-mono text-xs text-center md:text-right" style={{ color: "rgba(245,245,245,0.12)", letterSpacing: "0.1em" }}>
+          <div className="font-mono text-xs text-center md:text-right" style={{ color: "rgba(245,245,245,0.70)", letterSpacing: "0.1em" }}>
             <div>© {year} ARTH AGRAWAL</div>
-            <div className="mt-1.5" style={{ color: "rgba(245,245,245,0.08)" }}>
+            <div className="mt-1.5" style={{ color: "rgba(245,245,245,0.60)" }}>
               ALL RIGHTS RESERVED
             </div>
           </div>
@@ -105,7 +105,7 @@ export default function Footer() {
         {/* Terminal shutdown line */}
         <motion.div
           className="mt-10 pt-6 flex items-center justify-center gap-2"
-          style={{ borderTop: "1px solid rgba(255,255,255,0.03)" }}
+          style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -113,13 +113,13 @@ export default function Footer() {
         >
           <span
             className="font-mono text-xs"
-            style={{ color: "rgba(245,245,245,0.08)", letterSpacing: "0.3em" }}
+            style={{ color: "rgba(245,245,245,0.60)", letterSpacing: "0.3em" }}
           >
             connection terminated
           </span>
           <span
             style={{
-              color: "rgba(126,249,255,0.2)",
+              color: "rgba(126,249,255,0.45)",
               animation: "blink 1.5s step-end infinite",
               fontFamily: "var(--font-mono)",
             }}

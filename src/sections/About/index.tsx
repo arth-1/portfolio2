@@ -34,7 +34,7 @@ export default function About() {
             /002
           </span>
           <div className="h-px flex-1" style={{ background: "var(--border)" }} />
-          <span className="font-mono text-xs" style={{ color: "rgba(245,245,245,0.2)", letterSpacing: "0.3em" }}>
+          <span className="font-mono text-xs" style={{ color: "rgba(245,245,245,0.70)", letterSpacing: "0.3em" }}>
             IDENTITY
           </span>
         </div>
@@ -48,7 +48,7 @@ export default function About() {
             {/* Label */}
             <motion.div
               className="font-mono text-xs"
-              style={{ color: "rgba(245,245,245,0.28)", letterSpacing: "0.22em" }}
+              style={{ color: "rgba(245,245,245,0.60)", letterSpacing: "0.22em" }}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -83,7 +83,7 @@ export default function About() {
                   key={i}
                   className="font-sans"
                   style={{
-                    color: "rgba(245,245,245,0.52)",
+                    color: "rgba(245,245,245,0.84)",
                     lineHeight: "1.8",
                     fontSize: "clamp(0.92rem, 1.8vw, 1.05rem)",
                   }}
@@ -105,7 +105,7 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.35 }}
             >
-              <div className="font-mono text-xs mb-5" style={{ color: "rgba(245,245,245,0.22)", letterSpacing: "0.28em" }}>
+              <div className="font-mono text-xs mb-5" style={{ color: "rgba(245,245,245,0.65)", letterSpacing: "0.28em" }}>
                 EXPERIENCE
               </div>
               {experience.map((exp, i) => (
@@ -130,7 +130,7 @@ export default function About() {
                       <li
                         key={j}
                         className="font-sans text-sm flex items-start gap-2"
-                        style={{ color: "rgba(245,245,245,0.4)", lineHeight: "1.6" }}
+                        style={{ color: "rgba(245,245,245,0.85)", lineHeight: "1.6" }}
                       >
                         <span style={{ color: "var(--accent)", opacity: 0.5, flexShrink: 0, marginTop: "0.15em" }}>▸</span>
                         {h}
@@ -148,7 +148,7 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.45 }}
             >
-              <div className="font-mono text-xs mb-5" style={{ color: "rgba(245,245,245,0.22)", letterSpacing: "0.28em" }}>
+              <div className="font-mono text-xs mb-5" style={{ color: "rgba(245,245,245,0.65)", letterSpacing: "0.28em" }}>
                 ACHIEVEMENTS
               </div>
               <div className="flex flex-col gap-3">
@@ -156,7 +156,7 @@ export default function About() {
                   <div
                     key={i}
                     className="font-mono text-xs flex items-start gap-3"
-                    style={{ color: "rgba(245,245,245,0.42)", lineHeight: "1.6" }}
+                    style={{ color: "rgba(245,245,245,0.85)", lineHeight: "1.7", fontSize: "0.94rem" }}
                   >
                     <span style={{ color: "var(--accent)", opacity: 0.6, flexShrink: 0 }}>▶</span>
                     {a}
@@ -197,13 +197,13 @@ export default function About() {
               {/* Canvas overlay labels */}
               <div
                 className="absolute top-3 right-3 font-mono text-xs pointer-events-none"
-                style={{ color: "rgba(126,249,255,0.35)", letterSpacing: "0.2em", fontSize: "0.6rem" }}
+                style={{ color: "rgba(126,249,255,0.80)", letterSpacing: "0.2em", fontSize: "1.04rem" }}
               >
                 SCANNING...
               </div>
               <div
                 className="absolute bottom-3 left-3 font-mono pointer-events-none"
-                style={{ color: "rgba(245,245,245,0.14)", letterSpacing: "0.15em", fontSize: "0.58rem" }}
+                style={{ color: "rgba(245,245,245,0.45)", letterSpacing: "0.15em", fontSize: "0.98rem" }}
               >
                 ENTITY: ARTH_AGRAWAL
               </div>
@@ -211,7 +211,7 @@ export default function About() {
               {/* Subtle border frame */}
               <div
                 className="absolute inset-0 pointer-events-none"
-                style={{ border: "1px solid rgba(126,249,255,0.08)", borderRadius: "2px" }}
+                style={{ border: "1px solid rgba(126,249,255,0.18)", borderRadius: "2px" }}
               />
             </motion.div>
 
@@ -232,7 +232,7 @@ export default function About() {
                 {["#ff3c3c", "#f59e0b", "#22c55e"].map((c, i) => (
                   <div key={i} className="w-2.5 h-2.5 rounded-full" style={{ background: c, opacity: 0.75 }} />
                 ))}
-                <span className="font-mono text-xs ml-2" style={{ color: "rgba(245,245,245,0.2)", letterSpacing: "0.12em" }}>
+                <span className="font-mono text-xs ml-2" style={{ color: "rgba(245,245,245,0.50)", letterSpacing: "0.12em" }}>
                   leadership.sh
                 </span>
               </div>

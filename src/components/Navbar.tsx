@@ -17,7 +17,7 @@ function NavLink({ label, href }: { label: string; href: string }) {
     <a
       href={href}
       className="font-mono text-xs tracking-widest transition-colors duration-200 hover:text-accent relative group"
-      style={{ color: "rgba(245,245,245,0.5)", letterSpacing: "0.2em" }}
+      style={{ color: "rgba(245,245,245,0.82)", letterSpacing: "0.2em" }}
       onMouseEnter={() => startScramble(label, 400)}
       onMouseLeave={() => stopScramble(label)}
     >
@@ -49,7 +49,7 @@ export default function Navbar({ visible = true }: { visible?: boolean }) {
         padding: "1.5rem clamp(1.5rem, 5vw, 5rem)",
         background: scrolled ? "rgba(5,5,5,0.85)" : "transparent",
         backdropFilter: scrolled ? "blur(20px)" : "none",
-        borderBottom: scrolled ? "1px solid rgba(255,255,255,0.04)" : "none",
+        borderBottom: scrolled ? "1px solid rgba(255,255,255,0.10)" : "none",
         transition: "all 0.4s ease",
       }}
       initial={{ opacity: 0, y: -20 }}

@@ -14,10 +14,10 @@
   --color-text-dark: #f5f5f5;
   --color-text-light: #050505;
   --color-accent: #7ef9ff;
-  --color-secondary: #6f6f6f;
-  --color-surface: #0d0d0d;
-  --color-surface-card: #111111;
-  --color-border: #1e1e1e;
+  --color-secondary: #9a9a9a;
+  --color-surface: #0f0f0f;
+  --color-surface-card: #141414;
+  --color-border: #2c2c2c;
 }
 
 /* ============================================================
@@ -26,16 +26,16 @@
 :root {
   --bg-dark: #050505;
   --bg-light: #f0ede8;
-  --text-dark: #f5f5f5;
+  --text-dark: #f0f0f0;
   --text-light: #050505;
   --accent: #7ef9ff;
   --accent-glow: rgba(126, 249, 255, 0.4);
   --accent-dim: rgba(126, 249, 255, 0.12);
-  --secondary: #6f6f6f;
-  --surface: #0d0d0d;
-  --surface-card: #111111;
-  --border: #1e1e1e;
-  --border-light: rgba(255, 255, 255, 0.06);
+  --secondary: #9a9a9a;
+  --surface: #0f0f0f;
+  --surface-card: #141414;
+  --border: #2c2c2c;
+  --border-light: rgba(255, 255, 255, 0.1);
   --font-sans: var(--font-space-grotesk), system-ui, sans-serif;
   --font-mono: var(--font-ibm-plex-mono), "Courier New", monospace;
 }
@@ -98,6 +98,17 @@ body {
 .glow-text {
   text-shadow: 0 0 20px var(--accent-glow), 0 0 60px rgba(126, 249, 255, 0.1);
 }
+
+/* ============================================================
+   TYPOGRAPHY OVERRIDES — bump Tailwind defaults for readability
+   ============================================================ */
+
+/* text-xs: 0.75rem default → 0.88rem for legibility */
+.text-xs  { font-size: 0.88rem !important; line-height: 1.6 !important; }
+/* text-sm: 0.875rem → 1.0rem */
+.text-sm  { font-size: 1.0rem !important; line-height: 1.65 !important; }
+/* text-base stays at 1rem but ensure line-height */
+.text-base { line-height: 1.7 !important; }
 
 /* ============================================================
    TERMINAL CURSOR BLINK
